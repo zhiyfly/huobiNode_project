@@ -5,10 +5,8 @@ const fs = require('fs');
 const hb_currency = require('../sdk/hb_currency');
 const sendMail = require('../email/mail');
 
-var config = {
-    access_key : '0e44466a-072c6d96-121dc8f5-bd52d',
-    secretkey : '079f54ea-165848f7-aefbc94c-70cea'
-}
+var config = require('./config')
+
 
 let Job = async function()  {
     
@@ -29,7 +27,7 @@ let Job = async function()  {
     for(let i =0;i < curr.length ;i++){
         let this_cur = curr[i]; //当前货币对
         //获取当前货币对价格
-        let amount = await hb_currency.get_currency(this_cur,config);
+        let amount = await hb_currency.get_currency(this_cur,config.hbconfig);
         // console.log(amount[0].close);
         //获取之前记录价格
         let exists = await fileExists(resourceURL+'/'+this_cur);

@@ -10,12 +10,6 @@ const URL_HUOBI_PRO = 'api.huobipro.com';
 
 
 var currency = {
-    /**
-           var config = {
-                access_key : '0e44466a-072c6d96-121dc8f5-bd52d',
-                secretkey : '079f54ea-165848f7-aefbc94c-70cea'
-            }
-     */
     get_currency : function(symbol,config) {
         var path = `/market/history/kline`;
         var body = get_body(symbol,config.access_key);
