@@ -5,8 +5,7 @@ const fs = require('fs');
 const hb_currency = require('../sdk/hb_currency');
 const sendMail = require('../email/mail');
 
-var config = require('./config')
-
+var config = require('./hbconfig');
 
 let Job = async function()  {
     
